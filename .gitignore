@@ -1,0 +1,5 @@
+build
+out
+gradle.properties
+.gradle
+.idea

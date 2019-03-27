@@ -27,7 +27,6 @@ class UnmockInterceptor implements Interceptor {
 
   @Override public Response intercept(Interceptor.Chain chain) throws IOException {
 
-
     final Request request = chain.request();
     final HttpUrl url = request.url();
     final Headers headers = request.headers();
