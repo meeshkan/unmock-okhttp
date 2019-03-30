@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-class UnmockInterceptor implements Interceptor {
+public class UnmockInterceptor implements Interceptor {
 
   final private @NotNull UnmockOptions unmockOptions;
   final private @NotNull List<String> story = new ArrayList<>();
@@ -23,6 +23,10 @@ class UnmockInterceptor implements Interceptor {
     this.unmockOptions = unmockOptions;
     this.accessToken = Token.getAccessToken(unmockOptions.persistence, unmockOptions.unmockHost, unmockOptions.unmockPort);
     this.xy = this.accessToken != null;
+  }
+
+  public @NotNull List<String> getStories() {
+    return Collections.unmodifiableList(this.story);
   }
 
   @Override public Response intercept(Interceptor.Chain chain) throws IOException {
@@ -61,7 +65,7 @@ class UnmockInterceptor implements Interceptor {
       method,
       url.encodedPath(), // TODO: should this be encoded?
       unmockOptions.signature,
-      story,
+      this.story,
       unmockOptions.unmockHost,
       this.xy
     );

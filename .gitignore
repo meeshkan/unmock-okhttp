@@ -1,5 +1,5 @@
 build
 out
-gradle.properties
 .gradle
 .idea
+gradle.properties
