@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.unmock/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.unmock/core)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.unmock/okhttp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.unmock/okhttp)
 [![CircleCI](https://circleci.com/gh/unmock/unmock-okhttp.svg?style=svg)](https://circleci.com/gh/unmock/unmock-okhttp)
 [![Known Vulnerabilities](https://snyk.io/test/github/unmock/unmock-okhttp/badge.svg?targetFile=build.gradle)](https://snyk.io/test/github/unmock/unmock-okhttp?targetFile=build.gradle)
 
