@@ -33,44 +33,46 @@ signing {
 
 archivesBaseName = 'okhttp'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+if (project.hasProperty("ossrhUsername")) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'unmock-okhttp'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'Core functions with which one can build an unmock java integration'
-                url 'http://www.example.com/example-application'
-
-                scm {
-                    connection 'https://github.com/unmock/unmock-okhttp.git'
-                    developerConnection 'https://github.com/unmock/unmock-okhttp'
-                    url 'https://github.com/unmock/unmock-okhttp'
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
                 }
 
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+
+                pom.project {
+                    name 'unmock-okhttp'
+                    packaging 'jar'
+                    // optionally artifactId can be defined here
+                    description 'Core functions with which one can build an unmock java integration'
+                    url 'http://www.example.com/example-application'
+
+                    scm {
+                        connection 'https://github.com/unmock/unmock-okhttp.git'
+                        developerConnection 'https://github.com/unmock/unmock-okhttp'
+                        url 'https://github.com/unmock/unmock-okhttp'
                     }
-                }
 
-                developers {
-                    developer {
-                        id 'mikesol'
-                        name 'Mike Solomon'
-                        email 'mike@meeshkan.com'
+                    licenses {
+                        license {
+                            name 'The Apache License, Version 2.0'
+                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id 'mikesol'
+                            name 'Mike Solomon'
+                            email 'mike@meeshkan.com'
+                        }
                     }
                 }
             }
