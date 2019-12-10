@@ -1,8 +1,10 @@
+# [Unmock](https://www.unmock.io/) (OkHttp)
+
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.unmock/okhttp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.unmock/okhttp)
 [![CircleCI](https://circleci.com/gh/unmock/unmock-okhttp.svg?style=svg)](https://circleci.com/gh/unmock/unmock-okhttp)
 [![Known Vulnerabilities](https://snyk.io/test/github/unmock/unmock-okhttp/badge.svg?targetFile=build.gradle)](https://snyk.io/test/github/unmock/unmock-okhttp?targetFile=build.gradle)
+[![Chat on Gitter](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/unmock/community)
 
-# Unmock
 Public API mocking for Java, Scala, Kotlin, Clojure, Groovy and friends.
 
 Unmock can be used to test modules that perform requests to third-party APIs like Hubspot, SendGrid, Behance, and hundreds of other public APIs.
